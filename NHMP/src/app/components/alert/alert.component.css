@@ -1,0 +1,6 @@
+
+/* Styling for the alerts being listed*/
+li {
+    list-style-type:none;
+    text-align: center;
+}

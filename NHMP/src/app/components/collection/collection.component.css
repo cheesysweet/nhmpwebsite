@@ -1,0 +1,12 @@
+
+/* Styling for the items */
+.items{
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+/* Styling for the delete button */
+.deleteButton{
+    background-color: red;
+}
+

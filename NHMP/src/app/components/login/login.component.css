@@ -1,0 +1,27 @@
+/* Styling for the container */
+.container{
+    border: none;
+    padding: 50px;
+    background: linear-gradient(rgb(156, 31, 69) 0%, rgb(36, 30, 122) 100%);
+    max-width: 500px;
+    margin-top: 5%;
+}
+
+/* Styling for the labels for the input fields */
+.container label {
+padding-right: 20px;
+}
+
+/* Styling for the input fields */
+.container input{
+   padding: 5px;
+   margin: 20px;
+   border: none;
+   border-radius: 5px;
+}
+
+/* Styling for headers and label */
+.container h1, h5, label {
+    color: white;
+    padding: 10px;
+}

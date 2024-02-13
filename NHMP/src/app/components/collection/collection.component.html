@@ -1,0 +1,25 @@
+<article>
+    <section class="items" [hidden]="items.length < 1">
+        <h2> {{ collection }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Current Amount</th>
+                    <th>Amount</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items | filter: filterArg">
+                    <td>{{ item.Type }}</td>
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Amount }}</td>
+                    <td><input #amount type="number" name="amount" placeholder="withdraw amount..."></td>
+                    <td><button class="deleteButton" (click)="removeAmount(item, amount.value)" (click)="amount.value = ''">Withdraw</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</article>

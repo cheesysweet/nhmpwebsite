@@ -1,0 +1,31 @@
+/* Styling for the items in table */
+.items{
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+/* Styling for the edit button */
+.editButton{
+    margin-top: 4px;
+    margin-right: 5px;
+    background-color: green;
+}
+
+/* Styling for the close button */
+.close:hover{
+    background: rgba(151, 27, 27, 0.7);
+    transform: translatey(-2px);
+}
+
+/* Styling for the delete button */
+.delete{
+    position: relative;
+    background: rgba(151, 27, 27, 0.7);
+    margin-right: auto;
+}
+
+/* Styling for the submit button */
+.submit{
+    background: rgba(52, 151, 27, 0.7);
+}
+

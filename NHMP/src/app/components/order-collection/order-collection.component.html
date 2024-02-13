@@ -1,0 +1,27 @@
+<article>
+        <section [hidden]="items.length < 1">
+            <h2> {{ collection }}</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Current Amount</th>
+                            <th>Recomended</th>
+                            <th>Order Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of items | filter: filterArg">
+                            <td>{{ item.Type }}</td>
+                            <td>{{ item.Name }}</td>
+                            <td>{{ item.Amount }}</td>
+                            <td>{{ getRecomended(item) }}</td>
+                            <td><input #amount type="number" name="restock" id="restock"></td>
+                            <td><button class="restockBtn" (click)="restock(item, amount.value); amount.value=''">Restock</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+</article>

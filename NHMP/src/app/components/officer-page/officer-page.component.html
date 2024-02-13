@@ -1,0 +1,4 @@
+<nav class="navbar"><app-filter text="items" (findTypes)="findType($event)"></app-filter></nav>
+<app-collection [collection]="clotheString" [items]="clothes" [filterArg]="filterArg"></app-collection>
+<app-collection [collection]="gearString" [items]="gear" [filterArg]="filterArg"></app-collection>
+<app-collection [collection]="carString" [items]="cars" [filterArg]="filterArg"></app-collection>

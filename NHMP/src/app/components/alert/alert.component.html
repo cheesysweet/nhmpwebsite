@@ -1,0 +1,6 @@
+
+<ngb-alert #selfClosingAlert type="danger" [dismissible]="false" *ngIf="!alertClosed" (closed)="alertClosed = true">
+    <li *ngFor="let alert of alerts">
+        {{ alert }}
+    </li>
+</ngb-alert>

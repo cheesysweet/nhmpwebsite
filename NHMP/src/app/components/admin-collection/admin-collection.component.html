@@ -1,0 +1,82 @@
+<article>
+    <section class="items" [hidden]="items.length < 1" >
+        <h2> {{ collection }}</h2>
+        <table>
+            <thead class="headers">
+                <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Current Amount</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items | filter: filterArg">
+                    <td>{{ item.Type }}</td>
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Amount }}</td>
+                    <td><button class="editButton" (click)="edit(item, editContent)">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</article>
+
+<!-- popup edit window -->
+<ng-template #editContent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" 
+            id="modal-basic-title">
+            Modify item
+        </h4>
+        <button type="button" class="close"
+                aria-label="Close" (click)=
+                "modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <tr>
+                    <td>Name</td>
+                    <td><input name="name" type="text" [(ngModel)]="editItem.Name"></td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td><input name="Type" type="text" [(ngModel)]="editItem.Type"></td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td><input name="Amount" type="number" [(ngModel)]="editItem.Amount"></td>
+                </tr>
+                <tr>
+                    <td>RestockLevel</td>
+                    <td><input name="RestockLevel" type="number" [(ngModel)]="editItem.RestockLevel"></td>
+                </tr>
+                <tr>
+                    <td>ThresholdLevel</td>
+                    <td><input name="ThresholdLevel" type="number" [(ngModel)]="editItem.ThresholdLevel"></td>
+                </tr>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" 
+        class="delete" 
+        (click)="modal.close('Save click')"
+        (click)="deleteItem()">
+            Delete item
+        </button>
+        <button type="button" 
+            class="submit" 
+            (click)="modal.close('Save click')"
+            (click)="editItems()">
+            Submit
+        </button>
+    </div>
+</ng-template>
+

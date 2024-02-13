@@ -1,0 +1,96 @@
+
+/* Styling for the header elements */
+header{
+    margin-top: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Styling for the body */
+body { 
+    font-family: 'Roboto', sans-serif;
+    background-image: url("assets/OEM-Inventory-Management-page.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: auto;
+    max-width: 70%;
+    font-size: large;
+    color: black;
+    text-align: center;
+}
+
+/* Styling for the articles */
+article {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the header */
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Styling for the table head */
+thead{
+    padding: 10px;
+    background-color: #009879;
+}
+
+/* Styling for the table data */
+tbody, tr, td{
+    border-bottom: solid rgb(104, 104, 104) 1px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Styling for the header */
+thead, tr, th{
+    padding: 15px;
+}
+
+/* Styling for the button */
+button{
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 400;
+    transition: transform 0.5s;
+}
+
+/* Styling for the hover over a button */
+button:hover{
+    background: rgba(255, 255, 255, 0.7);
+    transform: translatey(-2px);
+}
+
+/* Styling for the navigation bar */
+.navbar{
+    color: #009879;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Styling for the search bar */
+app-filter{
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Styling for the input bar */
+input{
+margin-left: 5px;
+border:2px black solid;
+border-radius: 5px;
+}
+
+/* Fits the table content to the section width */
+table{
+    width: 100%;
+}

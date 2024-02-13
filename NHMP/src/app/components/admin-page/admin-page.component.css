@@ -1,0 +1,13 @@
+
+/* Styling for the add new item button */
+.newItemButton{
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+input{
+    margin-left: 5px;
+    border:2px black solid;
+    border-radius: 5px;
+ }
+ 

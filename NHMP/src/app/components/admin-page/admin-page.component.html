@@ -1,0 +1,71 @@
+<app-alert></app-alert>
+<nav class="navbar">
+    <app-filter text="items" (findTypes)="findType($event)"></app-filter>
+    <button class="newItemButton" name="newItem" (click)="open(addContent)" >Add new item</button>
+    <button class="orderPageButton" name="orderPage" routerLink="/order">Order page</button>
+</nav>
+<app-admin-collection [collection]="clotheString" [items]="clothes" [filterArg]="filterArg"></app-admin-collection>
+<app-admin-collection [collection]="gearString" [items]="gear" [filterArg]="filterArg"></app-admin-collection>
+<app-admin-collection [collection]="carString" [items]="cars" [filterArg]="filterArg"></app-admin-collection>
+
+
+<!-- popup add window -->
+<ng-template #addContent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" 
+            id="modal-basic-title">
+            Add item
+        </h4>
+        <button type="button" class="close"
+                aria-label="Close" (click)=
+                "modal.dismiss('Cross click')">
+  
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <form (ngSubmit)="addItem()" [formGroup]="newItem">
+    <div class="modal-body" name="container">
+            <div class="form-group">
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td><input formControlName="Name" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td><input formControlName="Type" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td><input formControlName="Amount" type="number"></td>
+                    </tr>
+                    <tr>
+                        <td>RestockLevel</td>
+                        <td><input formControlName="RestockLevel" type="number"></td>
+                    </tr>
+                    <tr>
+                        <td>ThresholdLevel</td>
+                        <td><input formControlName="ThresholdLevel" type="number"></td>
+                    </tr>
+                    <input type="radio" formControlName="collection" name="collection" id="clothing" value="{{ clotheString }}">
+                    <label for="clothing">Clothing</label>
+                    <input type="radio" formControlName="collection" name="collection" id="gear" value="{{ gearString }}">
+                    <label for="gear">Gear</label>
+                    <input type="radio" formControlName="collection" name="collection" id="car" value="{{ carString }}">
+                    <label for="car">Cars</label>
+                </tbody>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" 
+            class="btn btn-outline-dark" 
+            (click)="modal.close('Save click')"
+            type="submit"
+            [disabled]="!newItem.valid">
+            Add item
+        </button>
+        </div>
+    </form> 
+</ng-template>

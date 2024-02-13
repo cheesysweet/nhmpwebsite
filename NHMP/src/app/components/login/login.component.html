@@ -1,0 +1,24 @@
+
+<article class="container">
+    <div class="text-center">
+        <h1>Login</h1>
+        <h5>Please enter username and password</h5> 
+    </div>  
+
+    <form [formGroup] = "loginForm" (ngSubmit) = "login()">
+        <div class="form-group">
+          <label for="Username">Username:</label>
+          <input formControlName="username"   type="username" class="form-control" id="usernameLogin" aria-describedby="emailHelp" placeholder="Enter Username...">
+        </div>
+        
+        <div class="form-group">
+          <label for="Password">Password:</label>
+          <input formControlName="password" type="password" class="form-control" id="passwordLogin" placeholder="Enter Password...">
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+</article>
+
+
+ 
